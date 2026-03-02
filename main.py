@@ -1,8 +1,6 @@
 import argparse
 from perception.detect_color import detect_objects
 from robot.robot_control import robot_connect, robot_disconnect, pick_one
-
-
 def run_detect(mode):
 
     results = detect_objects(show_windows=True)
@@ -60,4 +58,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.command == "detect":
+
         run_detect(args.mode)
