@@ -34,8 +34,6 @@ def pixel_to_robot(u, v, H):
 
     return float(X), float(Y)
 
-
-
 # Detect colored tiles with precise center
 def detect_objects(show_windows=True):
 
@@ -46,9 +44,7 @@ def detect_objects(show_windows=True):
 
     results = []
 
-    # =========================
     # Camera Initialization
-    # =========================
     cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)
 
     cap.set(cv2.CAP_PROP_FOURCC,
@@ -192,3 +188,4 @@ if __name__ == "__main__":
         print(f"Robot: ({obj['robot'][0]:.2f}, "
 
               f"{obj['robot'][1]:.2f})\n")
+
