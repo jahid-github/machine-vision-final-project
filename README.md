@@ -137,6 +137,8 @@ python main.py detect --mode plan
 * Save annotated image
 * No robot movement
 
+**Annotated Image**
+![](outputs/9.jpeg) 
 ---
 
 ### Execute Mode
@@ -149,7 +151,9 @@ python main.py detect --mode execute
 * Connect to robot
 * Pick detected objects
 * Place into box
-  
+
+**Robot Placing The Tiles**
+
 ![](outputs/6.jpeg)
 ![](outputs/7.jpeg)
 ---
