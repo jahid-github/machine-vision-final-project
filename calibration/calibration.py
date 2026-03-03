@@ -125,11 +125,7 @@ def run_calibration():
     print("\nCalibration saved successfully")
     print("File location:", save_path)
 
-
-# ---------------------------------------------------
 # Run calibration
-# ---------------------------------------------------
 if __name__ == "__main__":
-
-
     run_calibration()
+
