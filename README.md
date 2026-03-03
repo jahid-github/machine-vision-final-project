@@ -149,7 +149,9 @@ python main.py detect --mode execute
 * Connect to robot
 * Pick detected objects
 * Place into box
-
+  
+![](outputs/6.jpeg)
+![](outputs/7.jpeg)
 ---
 
 ## 5️⃣ Operator UI (Streamlit)
