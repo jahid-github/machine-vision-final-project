@@ -7,9 +7,7 @@ import os
 image_points = []
 robot_points = []
 
-# ---------------------------------------------------
 # Mouse callback to collect pixel coordinates
-# ---------------------------------------------------
 def mouse_callback(event, x, y, flags, param):
     global image_points
 
@@ -18,9 +16,7 @@ def mouse_callback(event, x, y, flags, param):
         image_points.append([x, y])
 
 
-# ---------------------------------------------------
 # Main calibration function
-# ---------------------------------------------------
 def run_calibration():
 
     global image_points, robot_points
@@ -89,10 +85,7 @@ def run_calibration():
         print(f"You clicked {len(image_points)} points")
         return
 
-    # ---------------------------------------------------
     # Enter robot coordinates
-    # ---------------------------------------------------
-
     print("\nNow enter robot coordinates in SAME ORDER")
 
     for i, p in enumerate(image_points):
@@ -108,10 +101,7 @@ def run_calibration():
     img_pts = np.array(image_points, dtype=np.float32)
     rob_pts = np.array(robot_points, dtype=np.float32)
 
-    # ---------------------------------------------------
-    # Compute homography
-    # ---------------------------------------------------
-
+   # Compute homography
     H, status = cv2.findHomography(img_pts, rob_pts)
 
     if H is None:
@@ -121,15 +111,10 @@ def run_calibration():
     print("\nHomography matrix computed successfully")
     print(H)
 
-    # ---------------------------------------------------
-    # Save calibration safely using absolute path
-    # ---------------------------------------------------
-
+    # Save calibration using absolute path
     # Get directory of THIS script
     script_dir = os.path.dirname(os.path.abspath(__file__))
-
     save_path = os.path.join(script_dir, "calibration.json")
-
     calibration_data = {
         "H": H.tolist()
     }
@@ -145,5 +130,6 @@ def run_calibration():
 # Run calibration
 # ---------------------------------------------------
 if __name__ == "__main__":
+
 
     run_calibration()
